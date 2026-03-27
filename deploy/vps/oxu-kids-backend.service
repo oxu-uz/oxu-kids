@@ -1,0 +1,20 @@
+[Unit]
+Description=OXU KIDS Spring Boot Backend
+After=network.target postgresql.service
+Wants=postgresql.service
+
+[Service]
+Type=simple
+User=oxukids
+Group=oxukids
+WorkingDirectory=/srv/oxu-kids/backend
+EnvironmentFile=/etc/oxu-kids/backend.env
+ExecStart=/usr/bin/java -jar /srv/oxu-kids/backend/app.jar
+SuccessExitStatus=143
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

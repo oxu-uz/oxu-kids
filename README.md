@@ -137,3 +137,4 @@ npm run dev
 - Do not use local development secrets in production
 - Set strong values for `JWT_SECRET`, admin passwords, and database credentials
 - Configure a production PostgreSQL database before deployment
+- VPS deploy templates are available in `deploy/vps/`
